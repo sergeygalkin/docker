@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     g++ \
     git \
     libmysqlclient-dev \ 
-    libtool
+    libtool \
+    && rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /usr/src/
 WORKDIR /usr/src
 RUN git clone https://github.com/akopytov/sysbench.git
@@ -17,6 +18,5 @@ WORKDIR /usr/src/sysbench
 RUN git checkout 1.0
 WORKDIR /usr/src/sysbench
 RUN ./autogen.sh && ./configure --prefix /opt/sysbench
-RUN make
-RUN make install
+RUN make && make install && make clean
 CMD ["/opt/sysbench/bin/sysbench"]
