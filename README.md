@@ -21,7 +21,7 @@ docker run --rm -it  sergeygals/sysbench:1.0 /opt/sysbench/bin/sysbench --test=o
 ```
 
 ## hadoop-pseudo-distributed
-Hbase 1.2.3 with hadoop 2.7.3 in pseudo-distributed mode
+Hbase 1.2.3 with hadoop 2.7.3 in pseudo-distributed mode with Oracle Java 8
 
 [![](https://images.microbadger.com/badges/image/sergeygals/hadoop-pseudo-distributed.svg)](https://microbadger.com/images/sergeygals/hadoop-pseudo-distributed "Get your own image badge on microbadger.com")
 
