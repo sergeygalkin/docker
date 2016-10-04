@@ -5,7 +5,7 @@ Hbase 1.2.3 with hadoop 2.7.3 in pseudo-distributed mode with Oracle Java 8
 
 ### Run
 ```
-docker run --rm sergeygals/hbase-pseudo-distributed
+docker run sergeygals/hbase-pseudo-distributed
 ```
 
 ### Connect to running container
