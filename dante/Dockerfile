@@ -40,8 +40,7 @@ RUN set -x \
   && cd .. \
   && rm -rf $DANTE_TEMP \
   && apk del --purge .build-deps \
-  && rm -rf /var/cache/apk/* /tmp/* \
-  && useradd nobody
+  && rm -rf /var/cache/apk/* /tmp/*
 
 ADD files /
 ADD entrypoint.sh /entrypoint.sh
