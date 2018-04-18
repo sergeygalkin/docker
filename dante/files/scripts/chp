@@ -2,6 +2,7 @@
 
 set -e
 
+
 USER_NAME=${1}
 PASSWORD0=${2}
 
@@ -11,7 +12,7 @@ else
         PORT="1080"
 fi
 
-if [ x"$USER_NAME" = "x" ]; then
+if [ x"${USER_NAME}" = "x" ]; then
     echo "Usage:"
     echo "$0 USER [PASSWORD]"
     exit 1
@@ -29,7 +30,6 @@ if [ x"${PASSWORD}" = "x" ]; then
     exit 1
 fi
 
-adduser -D -H -S "${USER_NAME}"
-echo "${USER_NAME}:${PASSWORD}" | chpasswd -c SHA256
+echo "${USER_NAME}:${PASSWORD}" | chpasswd -c SHA512
 
 echo "tg://socks?&user=${USER_NAME}&pass=${PASSWORD}&port=${PORT}&server="

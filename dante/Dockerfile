@@ -10,7 +10,7 @@ ENV DANTE_FILE dante.tar.gz
 ENV DANTE_TEMP dante
 ENV DANTE_DEPS linux-pam-dev curl gcc g++ make
 ENV WORKERS "10"
-ENV PORT "1080"
+ENV PORT "11088"
 
 RUN set -x \
   # Runtime dependencies
@@ -40,7 +40,8 @@ RUN set -x \
   && cd .. \
   && rm -rf $DANTE_TEMP \
   && apk del --purge .build-deps \
-  && rm -rf /var/cache/apk/* /tmp/*
+  && rm -rf /var/cache/apk/* /tmp/* \
+  && useradd nobody
 
 ADD files /
 ADD entrypoint.sh /entrypoint.sh
