@@ -11,6 +11,12 @@ else
         PORT="1080"
 fi
 
+if [ -f "/tmp/dante_server" ]; then
+        SERVER=`cat /tmp/dante_server`
+else
+        SERVER=''
+fi
+
 if [ x"$USER_NAME" = "x" ]; then
     echo "Usage:"
     echo "$0 USER [PASSWORD]"
@@ -32,4 +38,4 @@ fi
 adduser -D -H -S "${USER_NAME}"
 echo "${USER_NAME}:${PASSWORD}" | chpasswd -c SHA256
 
-echo "tg://socks?&user=${USER_NAME}&pass=${PASSWORD}&port=${PORT}&server="
+echo "tg://socks?&user=${USER_NAME}&pass=${PASSWORD}&port=${PORT}&server=${SERVER}"

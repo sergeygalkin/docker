@@ -1,6 +1,6 @@
 FROM alpine:3.6
 MAINTAINER Sergey Galkin <sgalkin@mirantis.com>
-LABEL version="0.1"
+LABEL version="0.2"
 LABEL description="SOCKS5 dante proxy"
 
 ENV DANTE_VER 1.4.2
